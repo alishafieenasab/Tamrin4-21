@@ -49,14 +49,18 @@ bool tripleUp(int[] aArray)
 
 //-------------------Part3-------------------
 
-int[] arr2 = { 1, 2, 3 };
+int[] arr2 = { 1, 2, 1, 3 };
 
-Console.WriteLine(isEverywhere(arr2, 2));
+Console.WriteLine(isEverywhere(arr2, 1));
 
 bool isEverywhere(int[] aArray, int aInt)
 {
     int j = 0;
-    int z = (aArray.Length / 2) + 1;
+    int z = 0;
+    if(aArray.Length % 2 == 0)
+        z = aArray.Length / 2;
+    else
+        z = (aArray.Length / 2) + 1;
     bool flag = false;
     for (int i = 0; i < aArray.Length; i += 2)
     {
